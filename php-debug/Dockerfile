@@ -23,6 +23,7 @@ RUN docker-php-ext-configure zip --with-libzip && \
         bcmath \
         curl \
         intl \
+        ldap \
         pcntl \
         sockets \
         xml \
