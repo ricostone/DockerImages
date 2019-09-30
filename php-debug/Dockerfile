@@ -14,6 +14,7 @@ RUN apk add --no-cache \
     apk add --no-cache --virtual .build-deps \
         $PHPIZE_DEPS \
         curl-dev \
+        openldap-dev \
         libxml2-dev \
         libzip-dev \
         icu-dev
