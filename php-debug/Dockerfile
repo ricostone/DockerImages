@@ -35,3 +35,5 @@ RUN pecl install apcu xdebug && \
         apcu \
         opcache \
         xdebug
+
+RUN apk add --no-cache openssh
