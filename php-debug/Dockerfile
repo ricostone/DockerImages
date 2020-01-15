@@ -19,7 +19,7 @@ RUN apk add --no-cache \
         libzip-dev \
         icu-dev
 
-RUN docker-php-ext-configure zip --with-libzip && \
+RUN docker-php-ext-configure zip && \
     docker-php-ext-install \
         bcmath \
         curl \
