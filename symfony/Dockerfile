@@ -1,8 +1,13 @@
 FROM composer
 FROM php:7.4-cli-alpine
-FROM node
 
 COPY --from=composer /usr/bin/composer /usr/local/bin/composer
+
+RUN set -eux \
+    & apk add \
+        --no-cache \
+        nodejs \
+        yarn
 
 RUN apk add --no-cache \
         bash \
