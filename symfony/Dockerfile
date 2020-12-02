@@ -3,6 +3,8 @@ FROM php:7.4-cli-alpine
 
 COPY --from=composer /usr/bin/composer /usr/local/bin/composer
 
+RUN apk add git
+
 RUN apk add --update nodejs nodejs-npm
 RUN npm install -g yarn
 
