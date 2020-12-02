@@ -6,7 +6,7 @@ COPY --from=composer /usr/bin/composer /usr/local/bin/composer
 RUN apk --update --no-cache add git less openssh
 
 RUN git config --global user.name "gitlab"
-RUN git config --global user.email gitlab@localhost
+RUN git config --global user.email "gitlab@localhost"
 
 RUN apk add --update --no-cache nodejs nodejs-npm yarn
 
