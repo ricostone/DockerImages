@@ -3,11 +3,8 @@ FROM php:7.4-cli-alpine
 
 COPY --from=composer /usr/bin/composer /usr/local/bin/composer
 
-RUN set -eux \
-    & apk add \
-        --no-cache \
-        nodejs \
-        yarn
+RUN apk add --update nodejs nodejs-npm
+RUN npm install -g yarn
 
 RUN apk add --no-cache \
         bash \
@@ -43,5 +40,3 @@ RUN pecl install apcu xdebug && \
         xdebug
 
 RUN apk add --no-cache openssh
-
-RUN npm install -g yarn
