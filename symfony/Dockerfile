@@ -3,10 +3,12 @@ FROM php:7.4-cli-alpine
 
 COPY --from=composer /usr/bin/composer /usr/local/bin/composer
 
-RUN apk add git
+RUN apk --update --no-cache add git less openssh
 
-RUN apk add --update nodejs nodejs-npm
-RUN npm install -g yarn
+RUN git config --global user.name "gitlab"
+RUN git config --global user.email gitlab@localhost
+
+RUN apk add --update --no-cache nodejs nodejs-npm yarn
 
 RUN apk add --no-cache \
         bash \
@@ -40,5 +42,3 @@ RUN pecl install apcu xdebug && \
         apcu \
         opcache \
         xdebug
-
-RUN apk add --no-cache openssh
