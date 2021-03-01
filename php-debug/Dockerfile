@@ -37,3 +37,5 @@ RUN pecl install apcu xdebug && \
         xdebug
 
 RUN apk add --no-cache openssh
+
+RUN echo "xdebug.mode=develop,coverage" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini

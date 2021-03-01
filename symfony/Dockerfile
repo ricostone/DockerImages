@@ -42,3 +42,5 @@ RUN pecl install apcu xdebug && \
         apcu \
         opcache \
         xdebug
+
+RUN echo "xdebug.mode=develop,coverage" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
