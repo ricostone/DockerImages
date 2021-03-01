@@ -32,7 +32,10 @@ RUN docker-php-ext-configure zip && \
         pcntl \
         sockets \
         xml \
-        zip
+        zip \
+        mysqli \
+        pdo \
+        pdo_mysql
 
 RUN pecl install apcu xdebug && \
     docker-php-ext-enable \
